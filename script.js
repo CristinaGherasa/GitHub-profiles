@@ -1,6 +1,5 @@
 const APIURL = 'https://api.github.com/users/' 
 
-
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 const main = document.getElementById('main')
@@ -16,7 +15,6 @@ async function getUser(username) {
         if (err.response.status == 404) {
             createErrorCard('No profile with this user name')
         }
-        
     }  
 }
 
@@ -55,13 +53,10 @@ function createUserCard(user) {
                     <li>${user.public_repos} <strong>Repos</strong></li>
                 </ul>
     
-                <div id="repos">
-                    
-                </div>
+                <div id="repos"></div>
             </div>
         </div>
     `
-
     main.innerHTML = cardHTML
 }
 
@@ -84,7 +79,6 @@ function addReposToCard(repos) {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-
     const user = search.value
 
     if (user) {
